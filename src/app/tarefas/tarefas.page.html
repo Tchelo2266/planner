@@ -5,7 +5,25 @@
 </ion-header>
 
 <ion-content>
-  <h4>Tarefas aqui!</h4>
+  <ion-header class="text-center">
+    <h4>Tarefas</h4>
+  </ion-header>
+  <ion-content>
+    <ion-card [routerLink]="['/produto-detalhes', obj.id]"
+        *ngFor="let obj of tarefas">
+        <ion-card-header>
+          <ion-card-title>{{obj.nome}}</ion-card-title>
+          <ion-card-sub-title>{{obj.data}}</ion-card-sub-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{obj.descricao}}
+        </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+
+
+  
   <ion-row class="justify-content-center">
     <ion-button class="mt-2" [routerLink]="['/login']" size="small">login</ion-button>
     <ion-button class="mt-2" [routerLink]="['/calendario']" size="small">Calendario</ion-button>
