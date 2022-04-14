@@ -1,11 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>calendario</ion-title>
+      <ion-item-divider>
+        <ion-label>
+          <ion-icon name="calendar" size="large" slot="start"></ion-icon>
+        </ion-label>
+          
+        <ion-label>
+          <ion-title font-family="Roboto">Planner</ion-title>
+        </ion-label>
+
+        <ion-label slot="end">
+            <ion-icon (click)="onClick()" size="large" slot="end" name="person-circle"></ion-icon>
+        </ion-label>
+      </ion-item-divider>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h3>Calendario funcionando!</h3>
+  <ion-card>
+    <ion-item>
+      <h3>Good Morning!</h3>
+    </ion-item>
+  </ion-card>
+  
+  <ion-card>
+    <ion-item>
+      <ion-datetime value="2012-12-15T13:47:20.789"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" slot="end">
+        Ver mais
+        <ion-icon name="chevron-forward" slot="end" size="large"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card>
+  
   <ion-row>
     <ion-col class="sm-2">
       <ion-button class="mt-2" [routerLink]="['/login']">Login</ion-button>
