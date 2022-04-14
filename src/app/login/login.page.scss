@@ -1,14 +1,13 @@
+form{
+    border: none;
+    background: none;
+}
+
 .user-icon{
-    position: absolute;
     font-size: 50px;
     color: var(--ion-color-medium-shade);
 }
 
-ion-grid{
-    position: relative;
-}
-
-.input-data{
-    position: absolute;
-    
+btn-logar{
+    margin-top: 20%;
 }

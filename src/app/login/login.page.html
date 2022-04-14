@@ -6,21 +6,27 @@
 
 <ion-content>
 
-  <ion-grid>
+  <div class="justify-content-center">
     <ion-row class="ion-justify-content-center">
       <h1><ion-icon name="person-circle-outline" class="user-icon"></ion-icon></h1>
     </ion-row>
-    
-    <ion-row>
-      <ion-item>
-        <ion-label position="floating">Login:</ion-label>
-        <ion-input placeholder="Digite seu login"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Senha:</ion-label>
-        <ion-input placeholder="Digite sua senha"></ion-input>
-      </ion-item>
-    </ion-row>
-  </ion-grid>
+    <form action="" class="form-control">
+      <ion-row class=" justify-content-center">
+        <ion-item>
+          <ion-label position="floating">Login:</ion-label>
+          <ion-input placeholder="Digite seu login"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Senha:</ion-label>
+          <ion-input placeholder="Digite sua senha"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row class=" justify-content-center">
+        <ion-button class="mt-2" [routerLink]="['/calendario']">
+          Logar
+        </ion-button>
+      </ion-row>
+    </form>
+  </div>
 
 </ion-content>
