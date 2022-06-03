@@ -17,24 +17,44 @@
 </ion-header>
 
 <ion-content>
+
   <ion-card>
     <ion-item>
-      <h3>{{this.saudacao}}</h3>
+      <h3 slot="title"> {{this.saudacao}} </h3>
     </ion-item>
   </ion-card>
-  
+
+  <ion-datetime locale="pt-BR" first-day-of-week="1" presentation="date" color="success" size="cover">
+
+  </ion-datetime>
+
   <ion-card>
     <ion-item>
-      <ion-datetime value="{{data}}"></ion-datetime>
+      <ion-label position="floating" name="titulo">Título</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Descrição</ion-label>
+      <ion-textarea placeholder="Descreva sua tarefa." rows="3" name="descricao"></ion-textarea>
     </ion-item>
 
     <ion-item>
-      <ion-button (click)="onClick()" expand="block" fill="clear" shape="round" slot="end">
-        Ver mais
-        <ion-icon name="chevron-forward" slot="end" size="large"></ion-icon>
-      </ion-button>
+      <ion-label>Notificação</ion-label>
+      <ion-toggle checked slot="end"></ion-toggle>
     </ion-item>
+    <ion-item>
+        <ion-datetime presentation="time" size="cover"></ion-datetime>
+    </ion-item>
+    
   </ion-card>
+
+  <ion-button (click)="presentAlertConfirm()" expand="block" color="danger">
+    Cancelar
+  </ion-button>
+
+  <ion-button [routerLink]="['/tarefas']" expand="block" color="success">
+    Salvar
+  </ion-button>
   
   <ion-row>
     <ion-col class="sm-2">

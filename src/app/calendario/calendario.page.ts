@@ -1,6 +1,6 @@
-import { getLocaleDateFormat, getLocaleDateTimeFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-calendario',
@@ -12,20 +12,45 @@ export class CalendarioPage implements OnInit {
   public data: string;
   public saudacao: string;
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
+
+  async presentAlertConfirm() {
+    const alert = await this.alertController.create({
+      cssClass: 'mensagemAlerta',
+      header: 'Atenção!',
+      message: 'Se cancelar sua tarefa não vai ser salva. Você tem certeza disso?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          id: 'cancel-button',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Confirmar',
+          id: 'confirm-button',
+          handler: () => {
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
 
   ngOnInit() {
-    
-    this.data = moment(new Date).format();
-    let hora_atual = moment().format('LT');
-    if(hora_atual <= '12:00' && hora_atual > '00:00'){
+    this.data = moment(new Date()).format();
+    // eslint-disable-next-line prefer-const
+    let horaAtual = moment().format('LT');
+    if(horaAtual <= '12:00' && horaAtual > '00:00'){
       this.saudacao = 'Bom dia!';
-    }else if(hora_atual > '12:00' && hora_atual < '18:00'){
+    }else if(horaAtual > '12:00' && horaAtual < '18:00'){
       this.saudacao = 'Boa tarde!';
     }else{
       this.saudacao = 'Boa noite!';
     }
-    
   }
-
 }
