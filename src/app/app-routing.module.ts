@@ -20,11 +20,16 @@ const routes: Routes = [
     path: 'calendario',
     loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule)
   },
-  
+
   {
     path: 'tarefas',
     loadChildren: () => import('./tarefas/tarefas.module').then( m => m.TarefasPageModule)
   },
+  {
+    path: 'registrar',
+    loadChildren: () => import('./registrar/registrar.module').then( m => m.RegistrarPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -1,32 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-item-divider>
+      <ion-label>
+        <ion-icon name="calendar" size="large" slot="start"></ion-icon>
+      </ion-label>
+        
+      <ion-label>
+        <ion-title font-family="Roboto">Planner</ion-title>
+      </ion-label>
+    </ion-item-divider>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-item-title>
+         <ion-icon name="people" size="large"></ion-icon>
+      </ion-item-title>
+    </ion-card-header>
 
-  <div class="justify-content-center">
-    <ion-row class="ion-justify-content-center">
-      <h1><ion-icon name="person-circle-outline" class="user-icon"></ion-icon></h1>
-    </ion-row>
-    <form action="" class="form-control">
-      <ion-row class=" justify-content-center">
-        <ion-item>
-          <ion-label position="floating">Login:</ion-label>
-          <ion-input placeholder="Digite seu login"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Senha:</ion-label>
-          <ion-input placeholder="Digite sua senha"></ion-input>
-        </ion-item>
-      </ion-row>
-      <ion-row class=" justify-content-center">
-        <ion-button class="mt-2" [routerLink]="['/calendario']">
-          Logar
-        </ion-button>
-      </ion-row>
-    </form>
-  </div>
+    <ion-card-content>
+      <ion-label>Para usar o Planner é necessário fazer o login.</ion-label>
+    </ion-card-content>
+  </ion-card>
+
+  <form action="" class="form-control">
+    <ion-item>
+      <ion-label position="floating">Login:</ion-label>
+      <ion-input placeholder="Digite seu login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha:</ion-label>
+      <ion-input placeholder="Digite sua senha"></ion-input>
+    </ion-item>
+
+    <ion-button [routerLink]="['/calendario']" expand="block">
+      Logar
+    </ion-button>
+    <ion-button expand="block" color="light">
+      <ion-icon name="logo-google" size="small" slot="start"></ion-icon>
+      Login pelo Google
+    </ion-button>
+    <ion-item [routerLink]="['/registrar']">
+      <ion-label>Não possui conta? <strong>Registre-se aqui.</strong> </ion-label>
+    </ion-item>
+  </form>
 
 </ion-content>

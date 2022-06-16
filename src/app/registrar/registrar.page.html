@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item-divider>
+      <ion-label>
+        <ion-icon name="calendar" size="large" slot="start"></ion-icon>
+      </ion-label>
+        
+      <ion-label>
+        <ion-title font-family="Roboto">Registrar</ion-title>
+      </ion-label>
+    </ion-item-divider>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form action="">
+    <ion-card>
+      <ion-item>
+        <ion-label name="email" position="floating">E-mail</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label name="senha" position="floating" minlenght="6" type="password">Senha</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label name="senhaConfirm" position="floating" minlenght="6" type="password">Confirmar Senha</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-button [routerLink]="['/login']" expand="block" color="danger">
+      Cancelar
+    </ion-button>
+    <ion-button [routerLink]="['/']" expand="block" color="success">
+      Entrar
+    </ion-button>
+  </form>
+</ion-content>

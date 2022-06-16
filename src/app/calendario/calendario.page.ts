@@ -42,15 +42,5 @@ export class CalendarioPage implements OnInit {
   }
 
   ngOnInit() {
-    this.data = moment(new Date()).format();
-    // eslint-disable-next-line prefer-const
-    let horaAtual = moment().format('LT');
-    if(horaAtual <= '12:00' && horaAtual > '00:00'){
-      this.saudacao = 'Bom dia!';
-    }else if(horaAtual > '12:00' && horaAtual < '18:00'){
-      this.saudacao = 'Boa tarde!';
-    }else{
-      this.saudacao = 'Boa noite!';
-    }
   }
 }

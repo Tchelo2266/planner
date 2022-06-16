@@ -18,43 +18,34 @@
 
 <ion-content>
 
-  <ion-card>
-    <ion-item>
-      <h3 slot="title"> {{this.saudacao}} </h3>
-    </ion-item>
-  </ion-card>
+  <form>
+    <ion-datetime locale="pt-BR" first-day-of-week="1" presentation="date" color="success" size="cover"></ion-datetime>
+  
+    <ion-card>
+        <ion-item>
+          <ion-label position="floating" name="titulo">Título</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Descrição</ion-label>
+          <ion-textarea placeholder="Descreva sua tarefa." rows="3" name="descricao"></ion-textarea>
+        </ion-item>
+        <ion-item button (click)="disabled()" lines="full">
+          <ion-label>Notificação</ion-label>
+          <ion-toggle checked slot="end"></ion-toggle>
+        </ion-item>
+        <ion-item>
+            <ion-datetime presentation="time" size="cover"></ion-datetime>
+        </ion-item>
+    </ion-card>
 
-  <ion-datetime locale="pt-BR" first-day-of-week="1" presentation="date" color="success" size="cover">
-
-  </ion-datetime>
-
-  <ion-card>
-    <ion-item>
-      <ion-label position="floating" name="titulo">Título</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="stacked">Descrição</ion-label>
-      <ion-textarea placeholder="Descreva sua tarefa." rows="3" name="descricao"></ion-textarea>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Notificação</ion-label>
-      <ion-toggle checked slot="end"></ion-toggle>
-    </ion-item>
-    <ion-item>
-        <ion-datetime presentation="time" size="cover"></ion-datetime>
-    </ion-item>
-    
-  </ion-card>
-
-  <ion-button (click)="presentAlertConfirm()" expand="block" color="danger">
-    Cancelar
-  </ion-button>
-
-  <ion-button [routerLink]="['/tarefas']" expand="block" color="success">
-    Salvar
-  </ion-button>
+    <ion-button (click)="presentAlertConfirm()" expand="block" color="danger">
+      Cancelar
+    </ion-button>
+    <ion-button [routerLink]="['/tarefas']" expand="block" color="success">
+      Salvar
+    </ion-button>
+  </form>
   
   <ion-row>
     <ion-col class="sm-2">
@@ -65,5 +56,4 @@
       <ion-button type="default" class="mt-2" [routerLink]="['/tarefas']" size="small">Tarefas</ion-button>
     </ion-col>
   </ion-row>
-
 </ion-content>
